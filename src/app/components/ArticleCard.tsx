@@ -28,7 +28,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
         >
           {article.title}
         </Link>
-        <p className="text-sm pb-3 text-slate-900">published on {article.createdAt}</p>
+        <p className="text-sm pb-3 text-slate-900">
+          published on {new Date(article.createdAt).toLocaleString()}
+        </p>
         <Link href={`articles/${article.id}`} className="text-slate-900 pb-6">
           {article.content.length > 70
             ? article.content.substring(0, 70)
